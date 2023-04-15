@@ -96,7 +96,7 @@ jobs:
     strategy:
       matrix:
         target: [zbdonglee, zb-gw04-1v2]
-        baudrate: [115200, 230400, 460800]
+        baudrate: [115200, 230400, 460800, 921600]
         include:
           - components: cpc_security_secondary_none
           - device: EFR32MG21A020F768IM32
