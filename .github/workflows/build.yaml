@@ -179,7 +179,7 @@ jobs:
         run: |
           mv */*.gbl .
           rm -rf */
-          find ./ -name "*zbdongle*.gbl" ! -name "*230*" | while read f
+          find ./ -name "*zbdongle*.gbl" ! -name "*230*" ! -name "*921*" | while read f
           do
               new=$(echo $f | sed "s/zbdonglee/zb-gw04-1v1/")
               cp $f $new
