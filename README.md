@@ -27,8 +27,8 @@ Use NabuCasa's [Universal-Silabs-Flasher](https://github.com/NabuCasa/universal-
 
 ## Building locally
 
-To build a firmware locally the build container can be reused. Simply start the
-container local with a build directory bind-mounted, e.g.
+To build a firmware locally the build container can be reused. If you use VSCode then simply open the included devcontainer. Or you can manually start the
+container locally using Docker, with a build directory bind-mounted, e.g.
 
 ```sh
 docker run --rm -it \
