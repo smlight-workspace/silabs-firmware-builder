@@ -1,11 +1,29 @@
 # Silicon Labs firmware builder repository
 
 This repository contains Dockerfiles and GitHub actions which build Silicon Labs
-firmware for Home Assistant Yellow and SkyConnect.
+firmware for Home Assistant Yellow and SkyConnect, Sonoff ZBDongle-E and EasyIot ZB-GW04 v1.1 and v1.2.
 
 It uses the Silicon Labs Gecko SDK and proprietary Silicon Labs tools such as
 the Silicon Labs Configurator (slc) and the Simplicity Commander standalone
-utility.
+utility. This is a fork of the [NabuCasa](https://github.com/NabuCasa/silabs-firmware-builder) silabs firmware builder, adding support for additional hardware.
+
+Three firmware variants are available:
+* EmberZNet NCP for Zigbee-only environments, for direct use with Zigbee2MQTT, ZHA or Zigpy or other Zigbee stacks
+* RCP Multi-PAN firmware for concurrent communication over Zigbee and Thread
+* OpenThread RCP firmware (experimental) Thread-only
+
+RCP Multi-PAN and OpenThread RCP firmwares are for use with Home Assistant [SiliconLabs Multiprotocol add-on](https://github.com/home-assistant/addons/blob/master/silabs-multiprotocol/DOCS.md)
+
+## Pre-Compiled Firmware
+Firmware builds can be found in the [firmware_builds](https://github.com/darkxst/silabs-firmware-builder/tree/main/firmware_builds) folder.
+
+`ncp-uart-hw-` EmberZnet pure Zigbee  
+`rcp-uart-802154-` RCP MultiPan  
+`ot-rcp-` OpenThread Only  
+
+ZBDongle-E and ZB-GW04 v1.1 do not support hardware flow control. Yellow, SkyConnect and ZB-GW04 v1.2 are built with hardware flow control. Various baudrates are available as listed at end of filename.
+
+Use NabuCasa's [Universal-Silabs-Flasher](https://github.com/NabuCasa/universal-silabs-flasher) to flash the `.gbl` files.
 
 ## Building locally
 
@@ -16,7 +34,7 @@ container local with a build directory bind-mounted, e.g.
 docker run --rm -it \
   --user builder \
   -v $(pwd)/build:/build \
-  ghcr.io/nabucasa/silabs-firmware-builder:4.1.4
+  ghcr.io/darkxst/silabs-firmware-builder:4.2.2
 ```
 
 To generate a project, use `slc generate`. To replicate/debug build issues in
