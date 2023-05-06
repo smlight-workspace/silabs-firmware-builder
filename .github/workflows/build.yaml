@@ -188,15 +188,20 @@ jobs:
       - name: Reorganise artifact structure
         run: |
           mv */*.gbl .
-          rm -rf */
-          find ./ -name "*zbdongle*.gbl" ! -name "*460*" | while read f
+          rm -rf *cp-uart-*/ ot-rcp*/
+          find ./ -maxdepth 1 -name "*zbdongle*.gbl" ! -name "*460*" | while read f
           do
               new=$(echo $f | sed "s/zbdonglee/zb-gw04-1v1/")
               cp $f $new
           done
-          ls
+
+          targets="skyconnect yellow zb-gw04-1v1 zb-gw04-1v2 zbdonglee"
+          for t in $targets; do
+                  mkdir -p $t
+                  find . -maxdepth 1 -type f -name "*$t*" -exec mv {} "$t" \;
+          done
         working-directory: firmware_builds
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update firmware builds
-          file_pattern: firmware_builds/*.gbl
+          file_pattern: firmware_builds/**.gbl
