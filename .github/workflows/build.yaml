@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       sdk_version: ${{ env.sdk_version }}
+      ot_version: 2.2.2.0
+      ezsp_version: 7.2.2.0
     steps:
       - uses: actions/checkout@v3.3.0
       - name: Log in to the GitHub container registry
@@ -75,7 +77,7 @@ jobs:
             baudrate: 230400
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
-      firmware_name: ncp-uart-hw-${{ matrix.target }}-${{ matrix.baudrate }}
+      firmware_name: ncp-uart-hw-v${{ needs.build-container.outputs.ezsp_version}}-${{ matrix.target }}-${{ matrix.baudrate }}
       project_file: "/gecko_sdk/protocol/zigbee/app/ncp/sample-app/ncp-uart-hw/ncp-uart-hw.slcp"
       project_name: "ncp-uart-hw"
       device: ${{ matrix.device }}
@@ -121,7 +123,7 @@ jobs:
             baudrate: 460800
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
-      firmware_name: rcp-uart-802154-${{ matrix.target }}-${{ matrix.baudrate }}
+      firmware_name: rcp-uart-802154-v${{ needs.build-container.outputs.sdk_version}}-${{ matrix.target }}-${{ matrix.baudrate }}
       project_file: "/gecko_sdk/protocol/openthread/sample-apps/ot-ncp/rcp-uart-802154.slcp"
       project_name: "rcp-uart-802154"
       device: ${{ matrix.device }}
@@ -161,7 +163,7 @@ jobs:
             baudrate: 460800
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
-      firmware_name: ot-rcp-${{ matrix.target }}-${{ matrix.baudrate }}
+      firmware_name: ot-rcp-v${{ needs.build-container.outputs.ot_version}}-${{ matrix.target }}-${{ matrix.baudrate }}
       project_file: "/gecko_sdk/protocol/openthread/sample-apps/ot-ncp/ot-rcp.slcp"
       project_name: "ot-rcp"
       device: ${{ matrix.device }}
