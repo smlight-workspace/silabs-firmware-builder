@@ -98,7 +98,7 @@ jobs:
     strategy:
       matrix:
         target: [zbdonglee, zb-gw04-1v2]
-        baudrate: [115200, 230400, 460800, 921600]
+        baudrate: [115200, 230400, 460800]
         include:
           - components: cpc_security_secondary_none
           - device: EFR32MG21A020F768IM32
@@ -115,6 +115,9 @@ jobs:
             device: EFR32MG21A020F512IM32
             components: cpc_security_secondary_none
             patchpath: "RCPMultiPAN/SkyConnect"
+            baudrate: 460800
+        exclude:
+          - target: zb-gw04-1v2
             baudrate: 460800
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
@@ -153,6 +156,9 @@ jobs:
             components: bootloader_interface
             patchpath: "OpenThreadRCP/SkyConnect"
             baudrate: 460800
+        exclude:
+          - target: zb-gw04-1v2
+            baudrate: 460800
     uses: ./.github/workflows/silabs-firmware-build.yaml
     with:
       firmware_name: ot-rcp-${{ matrix.target }}-${{ matrix.baudrate }}
@@ -181,7 +187,7 @@ jobs:
         run: |
           mv */*.gbl .
           rm -rf */
-          find ./ -name "*zbdongle*.gbl" ! -name "*230*" ! -name "*921*" | while read f
+          find ./ -name "*zbdongle*.gbl" ! -name "*460*" | while read f
           do
               new=$(echo $f | sed "s/zbdonglee/zb-gw04-1v1/")
               cp $f $new
