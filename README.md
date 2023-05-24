@@ -14,6 +14,11 @@ Three firmware variants are available:
 
 RCP Multi-PAN and OpenThread RCP firmwares are for use with Home Assistant [SiliconLabs Multiprotocol add-on](https://github.com/home-assistant/addons/blob/master/silabs-multiprotocol/DOCS.md)
 
+## Web Flasher
+Flash directly from your browser (only Chrome and Edge supported) [SL Web Flasher](https://darkxst.github.io/silabs-firmware-builder/)
+
+Read this [blog post](https://dialedin.com.au/blog/sonoff-zbdongle-e-rcp-firmware) for more details and instructions for using RCP firmware.
+
 ## Pre-Compiled Firmware
 Firmware builds can be found in the [firmware_builds](https://github.com/darkxst/silabs-firmware-builder/tree/main/firmware_builds) folder.
 
