@@ -1,11 +1,24 @@
---- a/config/sl_uartdrv_usart_vcom_config.h	2023-03-16 02:03:24.110344793 +0100
-+++ b/config/sl_uartdrv_usart_vcom_config.h	2023-03-16 02:12:02.131728433 +0100
-@@ -47,7 +47,7 @@
+From e182c1f345155c1dc3485d1ec5f414aa377edf0c Mon Sep 17 00:00:00 2001
+From: Tim Lunn <tim@feathertop.org>
+Date: Fri, 9 Jun 2023 01:56:50 +0000
+Subject: [PATCH] Disable hardware flow control
+
+---
+ config/sl_uartdrv_usart_vcom_config.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/config/sl_uartdrv_usart_vcom_config.h b/config/sl_uartdrv_usart_vcom_config.h
+index c64b243..e995058 100644
+--- a/config/sl_uartdrv_usart_vcom_config.h
++++ b/config/sl_uartdrv_usart_vcom_config.h
+@@ -60,7 +60,7 @@
  // <uartdrvFlowControlHw=> nRTS/nCTS hardware handshake
  // <uartdrvFlowControlHwUart=> UART peripheral controls nRTS/nCTS
- // <i> Default: uartdrvFlowControlHw
--#define SL_UARTDRV_USART_VCOM_FLOW_CONTROL_TYPE uartdrvFlowControlHw
+ // <i> Default: uartdrvFlowControlHwUart
+-#define SL_UARTDRV_USART_VCOM_FLOW_CONTROL_TYPE uartdrvFlowControlHwUart
 +#define SL_UARTDRV_USART_VCOM_FLOW_CONTROL_TYPE uartdrvFlowControlNone
  
  // <o SL_UARTDRV_USART_VCOM_OVERSAMPLING> Oversampling selection
  // <usartOVS16=> 16x oversampling
+-- 
+2.30.2
