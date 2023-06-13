@@ -59,6 +59,7 @@ jobs:
         baudrate: [115200, 230400]
         include:
           - device: EFR32MG21A020F768IM32
+          - components: zigbee_token_interface
           - target: zbdonglee
             patchpath: "EmberZNet/ZBDongleE"
           - target: zbdonglee-none
@@ -67,11 +68,12 @@ jobs:
             patchpath: "EmberZNet/ZB-GW04-1v2"
           - target: yellow
             device: MGM210PA32JIA
-            components: simple_led:board_activity
+            components: simple_led:board_activity,zigbee_token_interface
             patchpath: "EmberZNet/Yellow"
             baudrate: 115200
           - target: skyconnect
             device: EFR32MG21A020F512IM32
+            components: zigbee_token_interface
             patchpath: "EmberZNet/SkyConnect"
             baudrate: 115200
         exclude:
