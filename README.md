@@ -12,7 +12,7 @@ Three firmware variants are available:
 * RCP Multi-PAN firmware for concurrent communication over Zigbee and Thread
 * OpenThread RCP firmware (experimental) Thread-only
 
-RCP Multi-PAN and OpenThread RCP firmwares are for use with Home Assistant [SiliconLabs Multiprotocol add-on](https://github.com/home-assistant/addons/blob/master/silabs-multiprotocol/DOCS.md)
+RCP Multi-PAN firmware is for use with Home Assistant [SiliconLabs Multiprotocol add-on](https://github.com/home-assistant/addons/blob/master/silabs-multiprotocol/DOCS.md) and OpenThread RCP firmware is for [OpenThread Border Router add-on](https://github.com/home-assistant/addons/blob/master/openthread_border_router/DOCS.md)
 
 ## Web Flasher
 Flash directly from your browser (only Chrome and Edge supported) [SL Web Flasher](https://darkxst.github.io/silabs-firmware-builder/)
