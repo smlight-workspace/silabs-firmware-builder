@@ -36,6 +36,9 @@ RUN \
 
 ENV PATH="$PATH:/opt/slc_cli"
 
+# Temporarily patch slc until its fixed upstream
+COPY slc.sh /opt/slc_cli/slc
+
 ARG GCC_ARM_VERSION="10.3-2021.10"
 
 # Install ARM GCC embedded toolchain
@@ -46,7 +49,7 @@ RUN \
 
 ENV PATH="$PATH:/opt/gcc-arm-none-eabi-${GCC_ARM_VERSION}/bin"
 
-ARG GECKO_SDK_VERSION="v4.3.0"
+ARG GECKO_SDK_VERSION="v4.3.1"
 
 RUN \
     git clone --depth 1 -b ${GECKO_SDK_VERSION} \
