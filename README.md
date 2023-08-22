@@ -17,7 +17,15 @@ RCP Multi-PAN firmware is for use with Home Assistant [SiliconLabs Multiprotocol
 ## Web Flasher
 Flash directly from your browser (only Chrome and Edge supported) [SL Web Flasher](https://darkxst.github.io/silabs-firmware-builder/)
 
-Read this [blog post](https://dialedin.com.au/blog/sonoff-zbdongle-e-rcp-firmware) for more details and instructions for using RCP firmware.
+Read this [blog post](https://dialedin.com.au/blog/sonoff-zbdongle-e-rcp-firmware) for more details and instructions for using RCP Multi-pan firmware.
+
+## Home Assistant Add-on
+**RCP MultiPan firmware ONLY**  
+You can install this HA addon to keep your dongle up to date with latest the RCP  Multi-Pan firmware. This is only for use if you are using the [SiliconLabs Multiprotocol add-on](https://github.com/home-assistant/addons/blob/master/silabs-multiprotocol/DOCS.md).
+
+[Multipan Flasher Addon](https://github.com/darkxst/multipan_flasher/tree/main)
+
+It can also be used for the initial conversion to MultiPan firmware, however you will need to disable ZHA or Zigbee2MQTT while you do this initial flash. You can then install and configure the Silabs Multiprotocol Add-on.
 
 ## Pre-Compiled Firmware
 Firmware builds can be found in the [firmware_builds](https://github.com/darkxst/silabs-firmware-builder/tree/main/firmware_builds) folder.
