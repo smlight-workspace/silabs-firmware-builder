@@ -15,5 +15,5 @@ outputs:
   ot_matrix:
     description: 'matrix config for openthread firmware'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
