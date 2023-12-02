@@ -38,6 +38,13 @@ ZBDongle-E and ZB-GW04 v1.1 do not support hardware flow control. Yellow, SkyCon
 
 Use NabuCasa's [Universal-Silabs-Flasher](https://github.com/NabuCasa/universal-silabs-flasher) to flash the `.gbl` files.
 
+## Support
+
+If you would like to help support further development of my `HAOS for iHost` project consider buying me a coffee!
+
+<a href="https://www.buymeacoffee.com/darkxst" target="_blank"><img src="img/blue-button.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+
+
 ## Building locally
 
 To build a firmware locally the build container can be reused. If you use VSCode then simply open the included devcontainer. Or you can manually start the
