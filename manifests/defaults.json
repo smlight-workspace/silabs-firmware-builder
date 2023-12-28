@@ -16,7 +16,7 @@
     },
     "ot-rcp": {
         "components": "bootloader_interface",
-        "extra_c_defs": "'-DOPENTHREAD_CONFIG_NCP_REBOOT_BOOTLOADER_ENABLE=1'"
+        "extra_c_defs": "'-DOPENTHREAD_CONFIG_PLATFORM_BOOTLOADER_MODE_ENABLE=1'"
     }
 
 }
