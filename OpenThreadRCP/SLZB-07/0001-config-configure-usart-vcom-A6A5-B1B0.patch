@@ -24,12 +24,12 @@
 -// #define SL_UARTDRV_USART_VCOM_CTS_PORT          gpioPortA
 -// #define SL_UARTDRV_USART_VCOM_CTS_PIN           2
 +#define SL_UARTDRV_USART_VCOM_CTS_PORT          gpioPortB
-+#define SL_UARTDRV_USART_VCOM_CTS_PIN           1
++#define SL_UARTDRV_USART_VCOM_CTS_PIN           0
  
 -// #define SL_UARTDRV_USART_VCOM_RTS_PORT          gpioPortA
 -// #define SL_UARTDRV_USART_VCOM_RTS_PIN           3
 +#define SL_UARTDRV_USART_VCOM_RTS_PORT          gpioPortB
-+#define SL_UARTDRV_USART_VCOM_RTS_PIN           0
++#define SL_UARTDRV_USART_VCOM_RTS_PIN           1
  // [USART_SL_UARTDRV_USART_VCOM]$
  // <<< sl:end pin_tool >>>
  
