@@ -154,4 +154,4 @@ jobs:
         if: success() || failure()
         with:
           name: ${{ inputs.firmware_name }}
-          path: ${{ inputs.firmware_name }}/build/release/${{ inputs.firmware_name }}.gbl
+          path: ${{ inputs.firmware_name }}/build/release/*.*
